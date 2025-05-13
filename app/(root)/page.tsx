@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import InterviewCard from "@/components/InterviewCard";
 
 import { getCurrentUser } from "@/lib/actions/auth.actions";
-import { getInterviewsByUserId, getLatestInterviews } from "@/lib/actions/auth.actions";
+import { getInterviewsByUserId, getLatestInterviews } from "@/lib/actions/general.action";
 
 async function Page() {
   const user = await getCurrentUser();
@@ -50,7 +50,7 @@ async function Page() {
               <InterviewCard
                 key={interview.id}
                 userId={user?.id}
-                interviewId={interview.id}
+                id={interview.id}
                 role={interview.role}
                 type={interview.type}
                 techstack={interview.techstack}
@@ -72,7 +72,7 @@ async function Page() {
               <InterviewCard
                 key={interview.id}
                 userId={user?.id}
-                interviewId={interview.id}
+                id={interview.id}
                 role={interview.role}
                 type={interview.type}
                 techstack={interview.techstack}
